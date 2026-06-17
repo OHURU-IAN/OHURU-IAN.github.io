@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ian Ohuru - Software Engineer</title>
+<meta name="description" content="Ian Ohuru - Software Engineer building full-stack web applications and embedded systems.">
+<style>
+  :root{
+    --navy:#1f2a44;
+    --navy-deep:#162038;
+    --accent:#2f80ed;
+    --accent-soft:#eaf2fd;
+    --ink:#22262e;
+    --muted:#5b6472;
+    --line:#e6e9f0;
+    --bg:#f6f8fc;
+    --card:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-weight:800;letter-spacing:1px;color:var(--navy);}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--muted);}
+  .nav-links a:hover{color:var(--accent);}
+  @media(max-width:680px){.nav-links{display:none;}}
+  header.hero{background:linear-gradient(165deg,var(--navy),var(--navy-deep));color:#eaf0fb;padding:82px 0 76px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .hero-grid > *{min-width:0;}
+  .mono{width:104px;height:104px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:#fff;border:4px solid rgba(255,255,255,.2);margin-bottom:26px;}
+  .hero h1{font-size:48px;font-weight:800;letter-spacing:1px;line-height:1.05;}
+  .tag{color:#78b4ff;font-weight:700;letter-spacing:4px;text-transform:uppercase;font-size:15px;margin-top:10px;}
+  .lead{max-width:640px;margin-top:20px;color:#c4cee0;font-size:17px;}
+  .cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:30px;font-weight:700;font-size:14px;transition:.2s;}
+  .btn.primary{background:var(--accent);color:#fff;}
+  .btn.primary:hover{background:#1c6fe0;}
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff;}
+  .btn.ghost:hover{background:rgba(255,255,255,.1);}
+  .hero-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:26px;}
+  .hero-panel h2{font-size:15px;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-bottom:18px;}
+  .stat{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-top:1px solid rgba(255,255,255,.12);color:#d7e1f2;font-size:14px;}
+  .stat strong{color:#fff;}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-panel{max-width:560px}.hero h1{font-size:40px}}
+  @media(max-width:480px){
+    .wrap{padding:0 24px;}
+    header.hero{padding:82px 0 70px;}
+    .hero h1{font-size:38px;}
+    .lead{font-size:16px;max-width:320px;}
+    .hero-panel{width:100%;max-width:342px;padding:24px 26px;}
+    .stat{display:block;}
+    .stat strong{display:block;margin-top:4px;}
+  }
+  section{padding:68px 0;}
+  .s-head{display:flex;align-items:center;gap:12px;margin-bottom:34px;}
+  .s-head .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);}
+  .s-head h2{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:.5px;}
+  .s-head .rule{flex:1;height:2px;background:var(--line);}
+  .about{font-size:17px;color:var(--muted);max-width:780px;}
+  .skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:760px){.skill-cols{grid-template-columns:1fr;}}
+  .skill-card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px;}
+  .skill-card h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--accent-soft);color:#1c5fc4;border:1px solid #d3e4fb;border-radius:20px;padding:6px 13px;font-size:13px;font-weight:600;}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.proj-grid{grid-template-columns:1fr;}}
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;transition:.2s;position:relative;overflow:hidden;}
+  .proj::before{content:"";position:absolute;left:0;top:0;height:100%;width:5px;background:var(--accent);}
+  .proj:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(31,42,68,.12);}
+  .proj h3{font-size:18px;color:var(--navy);margin-bottom:8px;}
+  .proj p{color:var(--muted);font-size:15px;margin-bottom:14px;}
+  .tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+  .tech span{font-size:12px;font-weight:600;color:#1c5fc4;background:var(--accent-soft);border-radius:14px;padding:4px 11px;}
+  .exp{border-left:2px solid var(--line);padding-left:26px;margin-left:6px;}
+  .job{position:relative;padding-bottom:30px;}
+  .job::before{content:"";position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+  .job .when{color:var(--accent);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;}
+  .job h3{font-size:18px;color:var(--navy);margin:3px 0;}
+  .job .co{color:var(--muted);font-weight:600;font-size:14px;margin-bottom:8px;}
+  .job ul{color:var(--muted);font-size:15px;padding-left:18px;}
+  .job li{margin-bottom:4px;}
+  footer{background:linear-gradient(165deg,var(--navy),var(--navy-deep));color:#dfe5f0;padding:64px 0 40px;text-align:center;}
+  footer h2{color:#fff;font-size:28px;margin-bottom:12px;}
+  footer p{color:#b9c4da;max-width:500px;margin:0 auto 26px;}
+  .social{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;}
+  .social a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:11px 20px;border-radius:30px;font-weight:600;font-size:14px;}
+  .social a:hover{background:var(--accent);border-color:var(--accent);}
+  .copy{font-size:13px;color:#8593af;}
+</style>
+</head>
+<body>
+  <nav><div class="wrap">
+    <div class="brand">IAN<span>.</span>OHURU</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap hero-grid">
+    <div>
+      <div class="mono">IO</div>
+      <h1>Ian Ohuru</h1>
+      <div class="tag">Software Engineer</div>
+      <p class="lead">Computer Science software engineer building full-stack web applications and embedded systems - from requirements and interface design to testing, debugging and deployment.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View my work</a>
+        <a class="btn ghost" href="https://github.com/OHURU-IAN">GitHub</a>
+        <a class="btn ghost" href="Ian_Ohuru_CV_2026.pdf" download>Download CV</a>
+      </div>
+    </div>
+    <div class="hero-panel" aria-label="Profile highlights">
+      <h2>Profile</h2>
+      <div class="stat"><span>Production experience</span><strong>5+ years</strong></div>
+      <div class="stat"><span>Core focus</span><strong>Full-stack systems</strong></div>
+      <div class="stat"><span>Also building</span><strong>Embedded software</strong></div>
+      <div class="stat"><span>Based in</span><strong>Nairobi, Kenya</strong></div>
+    </div>
+  </div></header>
+
+  <section id="about"><div class="wrap">
+    <div class="s-head"><span class="dot"></span><h2>About</h2><span class="rule"></span></div>
+    <p class="about">I am a final-year Computer Science (Software Engineering) student at Riara University, Nairobi, graduating December 2025. Over the past 5+ years I have designed, built and shipped production software across full-stack web applications and embedded systems. I care about clean architecture, reliable systems and solving real problems alongside UX, product and engineering teams.</p>
+  </div></section>
+
+  <section id="skills" style="background:#fff"><div class="wrap">
+    <div class="s-head"><span class="dot"></span><h2>Technical Skills</h2><span class="rule"></span></div>
+    <div class="skill-cols">
+      <div class="skill-card"><h3>Languages</h3><div class="chips">
+        <span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">C#</span><span class="chip">SQL</span>
+      </div></div>
+      <div class="skill-card"><h3>Frameworks &amp; Tools</h3><div class="chips">
+        <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Laravel</span><span class="chip">ASP.NET</span><span class="chip">Tailwind CSS</span><span class="chip">Prisma</span><span class="chip">REST APIs</span><span class="chip">Git &amp; GitHub</span>
+      </div></div>
+      <div class="skill-card"><h3>Concepts</h3><div class="chips">
+        <span class="chip">OOP</span><span class="chip">Data Structures</span><span class="chip">Full-Stack Dev</span><span class="chip">Machine Learning</span><span class="chip">Network Security</span><span class="chip">Embedded Systems</span>
+      </div></div>
+    </div>
+  </div></section>
+
+  <section id="projects"><div class="wrap">
+    <div class="s-head"><span class="dot"></span><h2>Selected Projects</h2><span class="rule"></span></div>
+    <div class="proj-grid">
+      <article class="proj">
+        <h3>Sweet Layers</h3>
+        <p>A cake catalogue and inventory platform with a public storefront and a password-protected admin dashboard to add, edit and manage cakes with photos, pricing and categories.</p>
+        <div class="tech"><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Prisma</span><span>SQLite</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/cake-w3b">Code &rarr;</a></div>
+      </article>
+      <article class="proj">
+        <h3>Student Management System</h3>
+        <p>A Laravel administrative system to manage student information and records with full CRUD workflows, built on routing, Eloquent ORM, migrations and Blade templating.</p>
+        <div class="tech"><span>PHP</span><span>Laravel</span><span>Blade</span><span>MySQL</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/student-management-system">Code &rarr;</a></div>
+      </article>
+      <article class="proj">
+        <h3>Employee Weekly Timesheet</h3>
+        <p>A print-ready timesheet web app for AIMEX Homecare Services that logs shift times and auto-calculates daily and weekly hour totals, with a Python utility to generate sheets from JSON.</p>
+        <div class="tech"><span>JavaScript</span><span>HTML</span><span>Python</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/employee-timesheet">Code &rarr;</a></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section id="experience" style="background:#fff"><div class="wrap">
+    <div class="s-head"><span class="dot"></span><h2>Experience</h2><span class="rule"></span></div>
+    <div class="exp">
+      <div class="job">
+        <div class="when">Jul 2025 - Present</div>
+        <h3>Software Engineer</h3>
+        <div class="co">AIMEX Software</div>
+        <ul>
+          <li>Built and tested client-facing applications across the full stack, improving system reliability.</li>
+          <li>Shipped front-end improvements and new UI functionality using modern web technologies.</li>
+          <li>Owned requirements documentation, database tasks and technical problem solving.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="when">Jun 2024 - Present</div>
+        <h3>Software Engineer</h3>
+        <div class="co">ElevenPlusGCSE - elevenplusgcse.com</div>
+        <ul>
+          <li>Designed, developed and debugged complex systems and owned implementation end to end.</li>
+          <li>Partnered with UX designers to build and iterate on user interfaces from user feedback.</li>
+          <li>Collaborated on the design and development of embedded processing systems.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <footer id="contact"><div class="wrap">
+    <h2>Let's build something</h2>
+    <p>Open to software engineering roles and collaborations. Reach out - I would be glad to talk.</p>
+    <div class="social">
+      <a href="mailto:ohuruian@gmail.com">ohuruian@gmail.com</a>
+      <a href="https://github.com/OHURU-IAN">github.com/OHURU-IAN</a>
+      <a href="tel:+254728764790">+254 728 764 790</a>
+    </div>
+    <div class="copy">Copyright 2026 Ian Ohuru. Built for GitHub Pages.</div>
+  </div></footer>
+</body>
+</html>
