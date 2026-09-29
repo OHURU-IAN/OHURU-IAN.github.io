@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ian Ohuru - Software Engineer</title>
-<meta name="description" content="Ian Ohuru - Software Engineer building full-stack web applications and embedded systems.">
+<meta name="description" content="Ian Ohuru - Software Engineer in Nairobi building full-stack web applications (TypeScript, React/Next.js, Node.js, PHP/Laravel) and embedded systems.">
+<meta property="og:title" content="Ian Ohuru - Software Engineer">
+<meta property="og:description" content="Full-stack software engineer in Nairobi, Kenya. Projects, experience and CV.">
+<meta property="og:url" content="https://ohuru-ian.github.io/">
+<meta property="og:type" content="website">
 <style>
   :root{
     --navy:#1f2a44;
@@ -85,6 +89,13 @@
   .job .co{color:var(--muted);font-weight:600;font-size:14px;margin-bottom:8px;}
   .job ul{color:var(--muted);font-size:15px;padding-left:18px;}
   .job li{margin-bottom:4px;}
+  .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.edu-grid{grid-template-columns:1fr;}}
+  .edu{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:20px 22px;}
+  .edu .when{color:var(--accent);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;}
+  .edu h3{font-size:16px;color:var(--navy);margin:3px 0;}
+  .edu p{color:var(--muted);font-size:14px;}
+  .proj .status{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#8a5a00;background:#fff4dc;border-radius:10px;padding:2px 9px;margin-left:6px;vertical-align:middle;}
   footer{background:linear-gradient(165deg,var(--navy),var(--navy-deep));color:#dfe5f0;padding:64px 0 40px;text-align:center;}
   footer h2{color:#fff;font-size:28px;margin-bottom:12px;}
   footer p{color:#b9c4da;max-width:500px;margin:0 auto 26px;}
@@ -102,6 +113,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
   </div></nav>
@@ -129,20 +141,20 @@
 
   <section id="about"><div class="wrap">
     <div class="s-head"><span class="dot"></span><h2>About</h2><span class="rule"></span></div>
-    <p class="about">I am a final-year Computer Science (Software Engineering) student at Riara University, Nairobi, graduating December 2025. Over the past 5+ years I have designed, built and shipped production software across full-stack web applications and embedded systems. I care about clean architecture, reliable systems and solving real problems alongside UX, product and engineering teams.</p>
+    <p class="about">I studied Computer Science (Software Engineering) at Riara University, Nairobi (BSc, December 2025). Over the past 5+ years I have designed, built and shipped production software across full-stack web applications and embedded systems. I care about clean architecture, reliable systems and solving real problems alongside UX, product and engineering teams.</p>
   </div></section>
 
   <section id="skills" style="background:#fff"><div class="wrap">
     <div class="s-head"><span class="dot"></span><h2>Technical Skills</h2><span class="rule"></span></div>
     <div class="skill-cols">
       <div class="skill-card"><h3>Languages</h3><div class="chips">
-        <span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">C#</span><span class="chip">SQL</span>
+        <span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">C#</span><span class="chip">SQL</span><span class="chip">HTML &amp; CSS</span>
       </div></div>
       <div class="skill-card"><h3>Frameworks &amp; Tools</h3><div class="chips">
-        <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Laravel</span><span class="chip">ASP.NET</span><span class="chip">Tailwind CSS</span><span class="chip">Prisma</span><span class="chip">REST APIs</span><span class="chip">Git &amp; GitHub</span>
+        <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Laravel</span><span class="chip">ASP.NET</span><span class="chip">Tailwind CSS</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">WebSockets</span><span class="chip">Prisma</span><span class="chip">REST APIs</span><span class="chip">MySQL / SQLite</span><span class="chip">Git &amp; GitHub</span><span class="chip">GitHub Actions</span><span class="chip">JIRA</span>
       </div></div>
       <div class="skill-card"><h3>Concepts</h3><div class="chips">
-        <span class="chip">OOP</span><span class="chip">Data Structures</span><span class="chip">Full-Stack Dev</span><span class="chip">Machine Learning</span><span class="chip">Network Security</span><span class="chip">Embedded Systems</span>
+        <span class="chip">OOP</span><span class="chip">Data Structures</span><span class="chip">Full-Stack Dev</span><span class="chip">Machine Learning</span><span class="chip">Network Security</span><span class="chip">Embedded Systems</span><span class="chip">Testing &amp; Debugging</span>
       </div></div>
     </div>
   </div></section>
@@ -152,21 +164,39 @@
     <div class="proj-grid">
       <article class="proj">
         <h3>Sweet Layers</h3>
-        <p>A cake catalogue and inventory platform with a public storefront and a password-protected admin dashboard to add, edit and manage cakes with photos, pricing and categories.</p>
-        <div class="tech"><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Prisma</span><span>SQLite</span></div>
+        <p>A cake catalogue and admin CMS. Customers browse by category; the owner adds, edits and removes cakes with photo uploads from a password-protected dashboard secured with signed session cookies. Deployed on Railway.</p>
+        <div class="tech"><span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>SQLite</span><span>Tailwind CSS</span><span>Three.js</span></div>
         <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/cake-w3b">Code &rarr;</a></div>
       </article>
       <article class="proj">
-        <h3>Student Management System</h3>
-        <p>A Laravel administrative system to manage student information and records with full CRUD workflows, built on routing, Eloquent ORM, migrations and Blade templating.</p>
-        <div class="tech"><span>PHP</span><span>Laravel</span><span>Blade</span><span>MySQL</span></div>
-        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/student-management-system">Code &rarr;</a></div>
+        <h3>Study Hub</h3>
+        <p>A learning platform with ordered courses, modules and lessons, a video player, real-time chat rooms per lesson and community channel over WebSockets, and live-stream controls pushed instantly to viewers.</p>
+        <div class="tech"><span>Node.js</span><span>Express</span><span>WebSockets</span><span>JavaScript</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/LatestNewsSR">Code &rarr;</a></div>
       </article>
       <article class="proj">
         <h3>Employee Weekly Timesheet</h3>
         <p>A print-ready timesheet web app for AIMEX Homecare Services that logs shift times and auto-calculates daily and weekly hour totals, with a Python utility to generate sheets from JSON.</p>
         <div class="tech"><span>JavaScript</span><span>HTML</span><span>Python</span></div>
-        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/employee-timesheet">Code &rarr;</a></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://ohuru-ian.github.io/employee-timesheet/">Live &rarr;</a><a href="https://github.com/OHURU-IAN/employee-timesheet">Code &rarr;</a></div>
+      </article>
+      <article class="proj">
+        <h3>Club Registration</h3>
+        <p>A university club directory and sign-up flow. Club data is driven by JSON; a Google Apps Script backend records registrations in Google Sheets. Deployed to GitHub Pages with GitHub Actions.</p>
+        <div class="tech"><span>JavaScript</span><span>Apps Script</span><span>GitHub Actions</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/club-desk-RU">Code &rarr;</a></div>
+      </article>
+      <article class="proj">
+        <h3>ElevenPlusGCSE</h3>
+        <p>The web platform for ElevenPlusGCSE Limited: 11 Plus, GCSE and A Level learning resources and live sessions, alongside a Christian studies section.</p>
+        <div class="tech"><span>WordPress</span><span>PHP</span><span>JavaScript</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://elevenplusgcse.com">Live &rarr;</a><a href="https://github.com/OHURU-IAN/Elevenplusgcsedev">Code &rarr;</a></div>
+      </article>
+      <article class="proj">
+        <h3>Student Management System <span class="status">In progress</span></h3>
+        <p>A Laravel application for managing student records. The database schema and admin layout are in place; the resource controller and CRUD views are in progress.</p>
+        <div class="tech"><span>PHP</span><span>Laravel</span><span>Blade</span><span>SQLite</span></div>
+        <div class="links" style="display:flex;gap:16px;margin-top:14px;font-weight:700;color:var(--accent)"><a href="https://github.com/OHURU-IAN/student-management-system">Code &rarr;</a></div>
       </article>
     </div>
   </div></section>
@@ -195,6 +225,28 @@
         </ul>
       </div>
     </div>
+  </div></section>
+
+  <section id="education"><div class="wrap">
+    <div class="s-head"><span class="dot"></span><h2>Education &amp; Certifications</h2><span class="rule"></span></div>
+    <div class="edu-grid">
+      <div class="edu">
+        <div class="when">Dec 2025</div>
+        <h3>BSc Computer Science - Software Engineering</h3>
+        <p>Riara University, Nairobi</p>
+      </div>
+      <div class="edu">
+        <div class="when">2023</div>
+        <h3>Cybersecurity Certificate</h3>
+        <p>IBM SkillsBuild</p>
+      </div>
+      <div class="edu">
+        <div class="when">2023</div>
+        <h3>English - Band 7.0</h3>
+        <p>Cambridge / British Council</p>
+      </div>
+    </div>
+    <p style="color:var(--muted);font-size:14px;margin-top:22px">Languages: English, Swahili</p>
   </div></section>
 
   <footer id="contact"><div class="wrap">
